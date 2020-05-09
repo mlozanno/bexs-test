@@ -4,6 +4,7 @@ import CreditCard from '~/components/CreditCard';
 
 const cardData = {
 	cardNumber: '123123123',
+	userName: 'Marcus Lozano',
 };
 
 describe('<CreditCard />', () => {
@@ -22,7 +23,7 @@ describe('<CreditCard />', () => {
 	it('should has an user name element', () => {
 		const { getByTestId } = render(<CreditCard />);
 
-		const userName = getByTestId('credit-name-number');
+		const userName = getByTestId('credit-card-user-name');
 
 		expect(userName).toBeDefined();
 	});
@@ -30,7 +31,7 @@ describe('<CreditCard />', () => {
 	it('should has an expiration date element', () => {
 		const { getByTestId } = render(<CreditCard />);
 
-		const expirationDate = getByTestId('credit-expiration-number');
+		const expirationDate = getByTestId('credit-card-expiration-date');
 
 		expect(expirationDate).toBeDefined();
 	});
@@ -38,7 +39,7 @@ describe('<CreditCard />', () => {
 	it('should has a cvv element', () => {
 		const { getByTestId } = render(<CreditCard />);
 
-		const cvv = getByTestId('credit-cvv-number');
+		const cvv = getByTestId('credit-card-cvv');
 
 		expect(cvv).toBeDefined();
 	});
@@ -49,5 +50,13 @@ describe('<CreditCard />', () => {
 		const cardNumber = getByTestId('credit-card-number');
 
 		expect(cardNumber).toHaveTextContent(cardData.cardNumber);
+	});
+
+	it('should be able to display userName data', () => {
+		const { getByTestId } = render(<CreditCard {...cardData} />);
+
+		const userName = getByTestId('credit-card-user-name');
+
+		expect(userName).toHaveTextContent(cardData.userName);
 	});
 });
