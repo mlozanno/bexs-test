@@ -15,11 +15,19 @@ describe('<CreditCard />', () => {
 		expect(cardNumber).toBeDefined();
 	});
 
-	it('should has a user name element', () => {
+	it('should has an user name element', () => {
 		const { getByTestId } = render(<CreditCard />);
 
 		const userName = getByTestId('credit-name-number');
 
 		expect(userName).toBeDefined();
+	});
+
+	it('should has an expiration date element', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const expirationDate = getByTestId('credit-expiration-number');
+
+		expect(expirationDate).toBeDefined();
 	});
 });
