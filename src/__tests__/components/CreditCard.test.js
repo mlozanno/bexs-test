@@ -101,4 +101,12 @@ describe('<CreditCard />', () => {
 
 		expect(userName).toHaveTextContent('00/00');
 	});
+
+	it('should be able to display "***" if cvv is missing', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const userName = getByTestId('credit-card-cvv');
+
+		expect(userName).toHaveTextContent('***');
+	});
 });
