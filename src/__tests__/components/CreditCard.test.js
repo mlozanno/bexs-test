@@ -2,6 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import CreditCard from '~/components/CreditCard';
 
+const cardData = {
+	cardNumber: '123123123',
+};
+
 describe('<CreditCard />', () => {
 	it('should be a function', () => {
 		expect(typeof CreditCard).toBe('function');
@@ -37,5 +41,13 @@ describe('<CreditCard />', () => {
 		const cvv = getByTestId('credit-cvv-number');
 
 		expect(cvv).toBeDefined();
+	});
+
+	it('should be able to display cardNumber data', () => {
+		const { getByTestId } = render(<CreditCard {...cardData} />);
+
+		const cardNumber = getByTestId('credit-card-number');
+
+		expect(cardNumber).toHaveTextContent(cardData.cardNumber);
 	});
 });
