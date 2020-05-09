@@ -20,7 +20,7 @@ CreditCard.propTypes = {
 CreditCard.defaultProps = {
 	cardNumber: '**** **** **** ****',
 	userName: 'nome do titular',
-	expirationDate: undefined,
+	expirationDate: '00/00',
 	cvv: undefined,
 };
 
