@@ -39,7 +39,8 @@
 				"consistent": true,
 				"minProperties": 3
 			}],
-			"react/jsx-indent": [2, "tab"]
+			"react/jsx-indent": [2, "tab"],
+			"react/jsx-props-no-spreading": "off"
 		},
 		"settings": {
 			"import/resolver": {
