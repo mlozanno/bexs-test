@@ -93,4 +93,12 @@ describe('<CreditCard />', () => {
 
 		expect(userName).toHaveTextContent('NOME DO TITULAR');
 	});
+
+	it('should be able to display "00/00" if expirationDate is missing', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const userName = getByTestId('credit-card-expiration-date');
+
+		expect(userName).toHaveTextContent('00/00');
+	});
 });
