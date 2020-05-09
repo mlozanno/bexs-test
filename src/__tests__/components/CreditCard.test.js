@@ -5,6 +5,7 @@ import CreditCard from '~/components/CreditCard';
 const cardData = {
 	cardNumber: '123123123',
 	userName: 'Marcus Lozano',
+	expirationDate: '10/23'
 };
 
 describe('<CreditCard />', () => {
@@ -58,5 +59,13 @@ describe('<CreditCard />', () => {
 		const userName = getByTestId('credit-card-user-name');
 
 		expect(userName).toHaveTextContent(cardData.userName);
+	});
+
+	it('should be able to display expirationDate data', () => {
+		const { getByTestId } = render(<CreditCard {...cardData} />);
+
+		const expirationDate = getByTestId('credit-card-expiration-date');
+
+		expect(expirationDate).toHaveTextContent(cardData.expirationDate);
 	});
 });
