@@ -36,7 +36,7 @@
 			"arrow-body-style": ["error", "as-needed"],
 			"object-curly-newline": ["error", {
 				"multiline": true,
-				"consistent": true,
+				"consistent": true
 			}],
 			"react/jsx-indent": [2, "tab"],
 			"react/jsx-props-no-spreading": "off"
