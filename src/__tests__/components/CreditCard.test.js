@@ -85,4 +85,12 @@ describe('<CreditCard />', () => {
 
 		expect(cardNumber).toHaveTextContent('**** **** **** ****');
 	});
+
+	it('should be able to display "NOME DO TITULAR" if userName is missing', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const userName = getByTestId('credit-card-user-name');
+
+		expect(userName).toHaveTextContent('NOME DO TITULAR');
+	});
 });
