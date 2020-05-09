@@ -21,7 +21,7 @@ CreditCard.defaultProps = {
 	cardNumber: '**** **** **** ****',
 	userName: 'nome do titular',
 	expirationDate: '00/00',
-	cvv: undefined,
+	cvv: '***',
 };
 
 export default CreditCard;
