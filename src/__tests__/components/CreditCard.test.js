@@ -14,4 +14,12 @@ describe('<CreditCard />', () => {
 
 		expect(cardNumber).toBeDefined();
 	});
+
+	it('should has a user name element', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const userName = getByTestId('credit-name-number');
+
+		expect(userName).toBeDefined();
+	});
 });
