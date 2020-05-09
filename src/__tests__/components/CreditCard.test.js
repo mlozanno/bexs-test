@@ -30,4 +30,12 @@ describe('<CreditCard />', () => {
 
 		expect(expirationDate).toBeDefined();
 	});
+
+	it('should has a cvv element', () => {
+		const { getByTestId } = render(<CreditCard />);
+
+		const cvv = getByTestId('credit-cvv-number');
+
+		expect(cvv).toBeDefined();
+	});
 });
