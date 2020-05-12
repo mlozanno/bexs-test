@@ -14,6 +14,14 @@ describe('<Button />', () => {
 		expect(typeof Button).toBe('function');
 	});
 
+	it('should be render component', () => {
+		const { getByTestId } = render(<Button {...buttonData} />);
+
+		const button = getByTestId('button');
+
+		expect(button).toMatchSnapshot();
+	});
+
 	it('should has a label', () => {
 		const { getByTestId } = render(<Button {...buttonData} />);
 
