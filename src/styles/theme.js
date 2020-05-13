@@ -11,3 +11,13 @@ export const fontSize = {
 	regular: `${17 / base}rem`, // 1.6rem
 	small: `${13 / base}rem`, // 1.3rem
 };
+
+export const zIndex = {
+	base: 0,
+	floated: base,
+};
+
+export const spacing = (...values) =>
+	values
+		.map(value => (Number(value) ? `${(value * base) / base}rem` : value))
+		.join(' ');
