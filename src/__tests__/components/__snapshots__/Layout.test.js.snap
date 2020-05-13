@@ -4,6 +4,31 @@ exports[`<Layout /> should be render component 1`] = `
 <section
   data-testid="layout"
 >
+  <ul
+    data-testid="nav"
+  >
+    <li>
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="/carteira"
+      >
+        Carteira
+      </a>
+    </li>
+    <li>
+      <a
+        href="/contato"
+      >
+        Contato
+      </a>
+    </li>
+  </ul>
   <h1>
     Bexs
   </h1>
