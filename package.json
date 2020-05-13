@@ -14,7 +14,8 @@
     "react-dom": "^16.13.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.1.0"
   },
   "jest": {
     "moduleNameMapper": {
@@ -27,7 +28,8 @@
     "test": "react-app-rewired test",
     "test:watch": "yarn test -- --watch --collect-coverage",
     "lint": "eslint . --ext .js",
-    "lint:fix": "yarn lint -- --fix"
+    "lint:fix": "yarn lint -- --fix",
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "browserslist": {
     "production": [
@@ -55,6 +57,12 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "stylelint": "^13.3.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^4.0.0",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }
