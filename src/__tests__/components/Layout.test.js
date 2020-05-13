@@ -23,11 +23,13 @@ describe('<Layout />', () => {
 	});
 
 	it('should be able to render Shop component when click in logo', () => {
-		const { getByTestId, getByAltText } = render(
+		const { getByTestId, getByAltText, getByText } = render(
 			<MemoryRouter>
 				<Layout />
 			</MemoryRouter>
 		);
+
+		fireEvent.click(getByText(/Checkout/i));
 
 		fireEvent.click(getByAltText('Bexs logo'));
 

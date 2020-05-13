@@ -5,12 +5,18 @@ exports[`<Layout /> should be render component 1`] = `
   data-testid="layout"
 >
   <header
+    class="sc-AxjAm guAoyL"
     data-testid="header"
   >
-    <img
-      alt="Bexs logo"
-      src="logo.png"
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="Bexs logo"
+        src="logo.png"
+        srcset="logo@2x.png 2x"
+      />
+    </a>
     <ul
       data-testid="nav"
     >

@@ -1,14 +1,17 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import Nav from '~/components/Nav';
 import logo from '~/assets/logo.png';
 import logo2x from '~/assets/logo@2x.png';
 
 const Header = () => (
-	<header data-testid="header">
-		<img src={logo} srcSet={`${logo2x} 2x`} alt="Bexs logo" />
+	<StyledHeader data-testid="header">
+		<Link to="/">
+			<img src={logo} srcSet={`${logo2x} 2x`} alt="Bexs logo" />
+		</Link>
 		<Nav />
-	</header>
+	</StyledHeader>
 );
 
 export default Header;
