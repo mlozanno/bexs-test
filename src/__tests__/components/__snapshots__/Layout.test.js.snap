@@ -4,31 +4,39 @@ exports[`<Layout /> should be render component 1`] = `
 <section
   data-testid="layout"
 >
-  <ul
-    data-testid="nav"
+  <header
+    data-testid="header"
   >
-    <li>
-      <a
-        href="/"
-      >
-        Home
-      </a>
-    </li>
-    <li>
-      <a
-        href="/carteira"
-      >
-        Carteira
-      </a>
-    </li>
-    <li>
-      <a
-        href="/checkout"
-      >
-        Checkout
-      </a>
-    </li>
-  </ul>
+    <img
+      alt="Bexs logo"
+      src="logo.png"
+    />
+    <ul
+      data-testid="nav"
+    >
+      <li>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/carteira"
+        >
+          Carteira
+        </a>
+      </li>
+      <li>
+        <a
+          href="/checkout"
+        >
+          Checkout
+        </a>
+      </li>
+    </ul>
+  </header>
   <div
     data-testid="shop-page"
   />

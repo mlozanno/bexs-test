@@ -22,6 +22,20 @@ describe('<Layout />', () => {
 		expect(layout).toMatchSnapshot();
 	});
 
+	it('should be able to render Shop component when click in logo', () => {
+		const { getByTestId, getByAltText } = render(
+			<MemoryRouter>
+				<Layout />
+			</MemoryRouter>
+		);
+
+		fireEvent.click(getByAltText('Bexs logo'));
+
+		const shopPage = getByTestId('shop-page');
+
+		expect(shopPage).toBeTruthy();
+	});
+
 	it('should be able to render Shop component when click in Home link', () => {
 		const { getByTestId, getByText } = render(
 			<MemoryRouter>
