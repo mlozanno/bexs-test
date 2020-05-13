@@ -5,12 +5,12 @@ import history from '~/services/history';
 
 import Routes from '~/routes';
 
-import Nav from '~/components/Nav';
+import Header from '~/components/Header';
 
 const Layout = () => (
 	<Router history={history}>
 		<section data-testid="layout">
-			<Nav />
+			<Header />
 			<Routes />
 		</section>
 	</Router>
