@@ -1,17 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Router } from 'react-router-dom';
+
+import history from '~/services/history';
+
+import Routes from '~/routes';
 
 import Nav from '~/components/Nav';
 
-const Layout = ({ children }) => (
-	<section data-testid="layout">
-		<Nav />
-		{children}
-	</section>
+const Layout = () => (
+	<Router history={history}>
+		<section data-testid="layout">
+			<Nav />
+			<Routes />
+		</section>
+	</Router>
 );
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-};
 
 export default Layout;
