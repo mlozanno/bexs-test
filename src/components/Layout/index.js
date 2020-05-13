@@ -7,12 +7,14 @@ import Routes from '~/routes';
 
 import Header from '~/components/Header';
 
+import { StyledLayout } from './styles';
+
 const Layout = () => (
 	<Router history={history}>
-		<section data-testid="layout">
+		<StyledLayout data-testid="layout">
 			<Header />
 			<Routes />
-		</section>
+		</StyledLayout>
 	</Router>
 );
 
