@@ -3,5 +3,9 @@
 exports[`<Layout /> should be render component 1`] = `
 <section
   data-testid="layout"
-/>
+>
+  <h1>
+    Bexs
+  </h1>
+</section>
 `;
