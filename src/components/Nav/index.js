@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MdMenu, MdClose } from 'react-icons/md';
 
-const Nav = () => (
-	<ul data-testid="nav">
-		<li>
-			<Link to="/">Home</Link>
-		</li>
+import { StyledNav, MenuList, ToggleButton } from './styles';
 
-		<li>
-			<Link to="/carteira">Carteira</Link>
-		</li>
+const Nav = () => {
+	const [opened, setOpened] = useState(false);
 
-		<li>
-			<Link to="/checkout">Checkout</Link>
-		</li>
-	</ul>
-);
+	const ToggleMenu = !opened ? MdMenu : MdClose;
+
+	const items = [
+		{ to: '/', label: 'Home' },
+		{ to: '/checkout', label: 'Checkout' },
+		{ to: '/carteira', label: 'Carteira' },
+	];
+
+	return (
+		<>
+			<ToggleButton
+				type="button"
+				className={opened ? 'close' : ''}
+				onClick={() => setOpened(!opened)}
+			>
+				<ToggleMenu size={40} />
+			</ToggleButton>
+
+			<StyledNav className={opened ? 'opened' : ''}>
+				<MenuList data-testid="nav">
+					{items.map(item => (
+						<li key={item.label}>
+							<Link to={item.to} onClick={() => setOpened(false)}>
+								{item.label}
+							</Link>
+						</li>
+					))}
+				</MenuList>
+			</StyledNav>
+		</>
+	);
+};
 
 export default Nav;
