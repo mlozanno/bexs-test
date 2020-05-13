@@ -1,18 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Layout from '~/components/Layout';
-
-const renderLayout = () => {
-	const { getByTestId } = render(
-		<Layout>
-			<h1>Bexs</h1>
-		</Layout>
-	);
-
-	return getByTestId('layout');
-};
 
 describe('<Layout />', () => {
 	it('should be a function', () => {
@@ -20,10 +11,56 @@ describe('<Layout />', () => {
 	});
 
 	it('should be render component', () => {
-		expect(renderLayout()).toMatchSnapshot();
+		const { getByTestId } = render(
+			<MemoryRouter>
+				<Layout />
+			</MemoryRouter>
+		);
+
+		const layout = getByTestId('layout');
+
+		expect(layout).toMatchSnapshot();
 	});
 
-	it('should be able to render children', () => {
-		expect(renderLayout()).toHaveTextContent(/Bexs/);
+	it('should be able to render Shop component when click in Home link', () => {
+		const { getByTestId, getByText } = render(
+			<MemoryRouter>
+				<Layout />
+			</MemoryRouter>
+		);
+
+		fireEvent.click(getByText(/Home/i));
+
+		const shopPage = getByTestId('shop-page');
+
+		expect(shopPage).toBeTruthy();
+	});
+
+	it('should be able to render Checkout component when click in Checkout link', () => {
+		const { getByTestId, getByText } = render(
+			<MemoryRouter>
+				<Layout />
+			</MemoryRouter>
+		);
+
+		fireEvent.click(getByText(/Checkout/i));
+
+		const checkoutPage = getByTestId('checkout-page');
+
+		expect(checkoutPage).toBeTruthy();
+	});
+
+	it('should be able to render Wallet component when click in Carteira link', () => {
+		const { getByTestId, getByText } = render(
+			<MemoryRouter>
+				<Layout />
+			</MemoryRouter>
+		);
+
+		fireEvent.click(getByText(/Carteira/i));
+
+		const walletPage = getByTestId('wallet-page');
+
+		expect(walletPage).toBeTruthy();
 	});
 });
