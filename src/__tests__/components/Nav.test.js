@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -10,7 +11,11 @@ describe('<Nav />', () => {
 	});
 
 	it('should be render component', () => {
-		const { getByTestId } = render(<Nav />);
+		const { getByTestId } = render(
+			<MemoryRouter>
+				<Nav />
+			</MemoryRouter>
+		);
 
 		const nav = getByTestId('nav');
 

@@ -20,9 +20,9 @@ exports[`<Nav /> should be render component 1`] = `
   </li>
   <li>
     <a
-      href="/contato"
+      href="/checkout"
     >
-      Contato
+      Checkout
     </a>
   </li>
 </ul>
