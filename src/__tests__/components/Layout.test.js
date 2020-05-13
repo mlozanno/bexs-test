@@ -4,16 +4,26 @@ import '@testing-library/jest-dom';
 
 import Layout from '~/components/Layout';
 
+const renderLayout = () => {
+	const { getByTestId } = render(
+		<Layout>
+			<h1>Bexs</h1>
+		</Layout>
+	);
+
+	return getByTestId('layout');
+};
+
 describe('<Layout />', () => {
 	it('should be a function', () => {
 		expect(typeof Layout).toBe('function');
 	});
 
 	it('should be render component', () => {
-		const { getByTestId } = render(<Layout />);
+		expect(renderLayout()).toMatchSnapshot();
+	});
 
-		const layout = getByTestId('layout');
-
-		expect(layout).toMatchSnapshot();
+	it('should be able to render children', () => {
+		expect(renderLayout()).toHaveTextContent(/Bexs/);
 	});
 });
