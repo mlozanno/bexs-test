@@ -2,74 +2,12 @@
 
 exports[`<Layout /> should be render component 1`] = `
 <section
-  class="sc-AxhUy NWLmU"
+  class="sc-AxgMl vsuna"
   data-testid="layout"
 >
-  <header
-    class="sc-AxhCb hbYNwt"
-    data-testid="header"
-  >
-    <a
-      href="/"
-    >
-      <img
-        alt="Bexs logo"
-        src="logo.png"
-        srcset="logo@2x.png 2x"
-      />
-    </a>
-    <button
-      class="sc-AxirZ cglUSK"
-      type="button"
-    >
-      <svg
-        fill="currentColor"
-        height="40"
-        size="40"
-        stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        width="40"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-        />
-      </svg>
-    </button>
-    <nav
-      class="sc-AxjAm liThSi"
-    >
-      <ul
-        class="sc-AxiKw cNRoFp"
-        data-testid="nav"
-      >
-        <li>
-          <a
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/checkout"
-          >
-            Checkout
-          </a>
-        </li>
-        <li>
-          <a
-            href="/carteira"
-          >
-            Carteira
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
   <div
     data-testid="shop-page"
   />
+  Coisas
 </section>
 `;

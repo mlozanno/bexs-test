@@ -11,9 +11,10 @@ import { StyledLayout } from './styles';
 
 const Layout = () => (
 	<Router history={history}>
+		<Header />
 		<StyledLayout data-testid="layout">
-			<Header />
 			<Routes />
+			Coisas
 		</StyledLayout>
 	</Router>
 );
