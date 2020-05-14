@@ -2,7 +2,7 @@
 
 exports[`<Nav /> should be render component 1`] = `
 <ul
-  class="sc-AxiKw cNRoFp"
+  class="sc-AxiKw kuWfqk"
   data-testid="nav"
 >
   <li>
