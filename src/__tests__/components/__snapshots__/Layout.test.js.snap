@@ -2,12 +2,11 @@
 
 exports[`<Layout /> should be render component 1`] = `
 <section
-  class="sc-AxgMl vsuna"
+  class="sc-fzpans gJquMt"
   data-testid="layout"
 >
   <div
     data-testid="shop-page"
   />
-  Coisas
 </section>
 `;
