@@ -1,7 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Checkout /> page should be render component 1`] = `
-<div
+<section
   data-testid="checkout-page"
-/>
+>
+  <section
+    class="sc-AxgMl fFPQpl"
+  >
+    <div
+      class="sc-AxjAm bqZbHY"
+      data-testid="credit-card"
+    >
+      <div
+        class="sc-AxirZ hAbGUU"
+      >
+        <div
+          class="sc-AxiKw iZbdSR"
+        >
+          <div
+            class="sc-AxhCb iYtyOb"
+          >
+            <span
+              data-field="card-number"
+              data-testid="credit-card-number"
+            >
+              **** **** **** ****
+            </span>
+            <span
+              data-field="card-user-name"
+              data-testid="credit-card-user-name"
+            >
+              NOME DO TITULAR
+            </span>
+            <span
+              data-field="card-expiration-date"
+              data-testid="credit-card-expiration-date"
+            >
+              00/00
+            </span>
+          </div>
+          <div
+            class="sc-AxhUy dvkhgG"
+          >
+            <span
+              data-field="card-cvv"
+              data-testid="credit-card-cvv"
+            >
+              ***
+            </span>
+          </div>
+        </div>
+      </div>
+      <h1>
+        Flipped:
+        true
+      </h1>
+      <button>
+        Flippar
+      </button>
+      <button>
+        Validar
+      </button>
+    </div>
+  </section>
+</section>
 `;
