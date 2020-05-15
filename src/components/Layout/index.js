@@ -14,7 +14,6 @@ const Layout = () => (
 		<Header />
 		<StyledLayout data-testid="layout">
 			<Routes />
-			Coisas
 		</StyledLayout>
 	</Router>
 );
