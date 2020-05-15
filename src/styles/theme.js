@@ -8,6 +8,7 @@ export const colors = {
 };
 
 export const fontSize = {
+	large: `${22 / base}rem`, // 2.2rem
 	regular: `${17 / base}rem`, // 1.6rem
 	small: `${13 / base}rem`, // 1.3rem
 };
