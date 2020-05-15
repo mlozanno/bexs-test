@@ -1,0 +1,3 @@
+Pontos sobre o layout
+- Sombra do cartão adaptada com css, pois, carregar uma imagem apenas para isso seria desnecessário;
+- Tentei ao máximo manter as dimensões do layout, pois, em alguns pontos no XD temos por exemplo, padding-top: 35.51px e padding-bottom: 37.65px, nestes casos fiz uma normalização para padding: 30 ou 40px, dependendo do contexto, para poder manter unificado as medidas em um único arquivo de temas (theme.js). Creio que quando este tipo de coisa acontece, o melhor a ser feito é um alinhamento entre engenharia e design para que possamos chegar em um padrão, facilitando assim, tanto desenvolvimento de layouts como implementação dos mesmos.
