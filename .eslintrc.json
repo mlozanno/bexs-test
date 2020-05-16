@@ -41,7 +41,8 @@
 			"react/jsx-indent": [2, "tab"],
 			"react/jsx-indent-props": [2, "tab"],
 			"react/jsx-props-no-spreading": "off",
-			"import/prefer-default-export": "off"
+			"import/prefer-default-export": "off",
+			"no-plusplus": "off"
 		},
 		"settings": {
 			"import/resolver": {
