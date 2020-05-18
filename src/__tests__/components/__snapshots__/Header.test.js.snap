@@ -46,9 +46,9 @@ exports[`<Header /> should render component 1`] = `
       >
         <li>
           <a
-            href="/"
+            href="/shop"
           >
-            Home
+            Shop
           </a>
         </li>
         <li>

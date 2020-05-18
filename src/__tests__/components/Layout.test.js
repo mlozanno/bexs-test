@@ -26,7 +26,7 @@ describe(`<Layout />`, () => {
 		expect(layout).toMatchSnapshot();
 	});
 
-	it(`should be able to render Shop component when click in logo`, () => {
+	it(`should be able to render Checkout component when click in logo`, () => {
 		const { getByTestId, getByAltText, getByText } = render(
 			<CardProvider>
 				<MemoryRouter>
@@ -39,7 +39,7 @@ describe(`<Layout />`, () => {
 
 		fireEvent.click(getByAltText(`Bexs logo`));
 
-		const shopPage = getByTestId(`shop-page`);
+		const shopPage = getByTestId(`checkout-page`);
 
 		expect(shopPage).toBeTruthy();
 	});
@@ -53,7 +53,7 @@ describe(`<Layout />`, () => {
 			</CardProvider>
 		);
 
-		fireEvent.click(getByText(/Home/i));
+		fireEvent.click(getByText(/Shop/i));
 
 		const shopPage = getByTestId(`shop-page`);
 

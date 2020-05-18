@@ -5,8 +5,287 @@ exports[`<Layout /> should be render component 1`] = `
   class="sc-fznJRM OhPZO"
   data-testid="layout"
 >
-  <div
-    data-testid="shop-page"
-  />
+  <section
+    data-testid="checkout-page"
+  >
+    <section
+      class="sc-fznyAO dJQHz"
+    >
+      <aside
+        class="sc-fznKkj ffuTVm"
+      >
+        <a
+          class="sc-fznZeY hSBrFY"
+          href="/carteira"
+        >
+          <svg
+            color="white"
+            fill="none"
+            height="30"
+            size="30"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="color: white;"
+            viewBox="0 0 24 24"
+            width="30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="15 18 9 12 15 6"
+            />
+          </svg>
+          <span>
+            Alterar forma de pagamento
+          </span>
+        </a>
+        <p
+          class="sc-AxgMl eXppXn"
+        >
+          <strong>
+            Etapa 2 
+          </strong>
+          de 3
+        </p>
+        <h2
+          class="sc-fzokOt ckOnlt"
+        >
+          Adicione um novo cartão de crédito
+        </h2>
+        <div
+          class="sc-AxmLO gHijmT sc-fzqBZW eNYWMu"
+          data-testid="card"
+        >
+          <div
+            class="sc-fzozJi dCsyya"
+          >
+            <div
+              class="sc-fzoLsD cqPttV"
+            >
+              <div
+                class="sc-fzpans doLmyc"
+              >
+                <span
+                  data-field="card-number"
+                  data-testid="card-number"
+                >
+                  **** **** **** ****
+                </span>
+                <span
+                  data-field="card-holder"
+                  data-testid="card-holder"
+                >
+                  NOME DO TITULAR
+                </span>
+                <span
+                  data-field="card-expiry-date"
+                  data-testid="card-expiry-date"
+                >
+                  00 / 00
+                </span>
+              </div>
+              <div
+                class="sc-fzplWN eLHGtq"
+              >
+                <span
+                  data-field="card-cvc"
+                  data-testid="card-cvc"
+                >
+                  ***
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div
+        class="sc-fzqNJr kXddJq"
+      >
+        <ol
+          class="sc-AxheI dDVSXw"
+        >
+          <li
+            class="sc-Axmtr inHKZf"
+            step="1"
+          >
+            Carrinho
+          </li>
+          <li
+            class="sc-Axmtr gZSzHn"
+            step="2"
+          >
+            Pagamento
+          </li>
+          <li
+            class="sc-Axmtr eaxoPC"
+            step="3"
+          >
+            Confirmação
+          </li>
+        </ol>
+        <form
+          class="sc-AxhUy eKKlrg"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            data-id="card-number"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink="false"
+            >
+              Número do cartão
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Card number"
+                autocomplete="cc-number"
+                class="MuiInputBase-input MuiInput-input"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="Card number"
+                type="tel"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            data-id="card-holder"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink="false"
+            >
+              Nome (igual ao cartão)
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiInput-input"
+                maxlength="40"
+                name="card-holder"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            data-id="expiry-date"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink="false"
+            >
+              Validade
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Expiry date in format MM YY"
+                autocomplete="cc-exp"
+                class="MuiInputBase-input MuiInput-input"
+                id="expiryDate"
+                name="expiryDate"
+                placeholder="MM/YY"
+                type="tel"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            data-id="cvc"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink="false"
+            >
+              CVV
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="CVC"
+                autocomplete="cc-csc"
+                class="MuiInputBase-input MuiInput-input"
+                id="cvc"
+                maxlength="3"
+                name="cvc"
+                placeholder="CVC"
+                type="tel"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root makeStyles-formControl-1"
+            data-id="installments"
+            name="installments"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+              data-shrink="false"
+              id="installments-label"
+            >
+              Número de parcelas
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+            >
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="installments-label mui-component-select-installments"
+                class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                id="mui-component-select-installments"
+                role="button"
+                tabindex="0"
+              >
+                <span>
+                  ​
+                </span>
+              </div>
+              <input
+                name="installments"
+                type="hidden"
+                value=""
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSelect-icon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+          <button
+            class="sc-AxhCb gmokhR"
+            data-testid="submit-button"
+            disabled=""
+            type="submit"
+          >
+            <span>
+              continuar
+            </span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </section>
 </section>
 `;
