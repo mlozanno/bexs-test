@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+
+import useCard from '~/hooks/useCard';
+
+import { formatCardNumber } from '~/utils';
 
 import {
 	StyledCreditCard,
@@ -9,35 +13,45 @@ import {
 	Back,
 } from './styles';
 
-const CreditCard = ({ cardNumber, userName, expirationDate, cvv }) => {
-	const [flipped, setFlipped] = useState(true);
-	const [valid, setValid] = useState(false);
+const CreditCard = ({ className }) => {
+	const [state, dispatch] = useCard();
+	const [brand, setBrand] = useState(undefined);
+
+	useEffect(() => {
+		if (state.cardType?.type) {
+			dispatch({ type: 'VALID_CARD' });
+			setBrand(state.cardType.type);
+
+			return;
+		}
+
+		dispatch({ type: 'INVALID_CARD' });
+	}, [state.cardType, dispatch]);
 
 	return (
-		<StyledCreditCard data-testid="credit-card">
+		<StyledCreditCard data-testid="card" className={className}>
 			<FliperContainer>
-				<Flipper flipped={flipped}>
-					<Front valid={valid}>
-						<span data-testid="credit-card-number" data-field="card-number">
-							{cardNumber}
+				<Flipper
+					flipped={state.flipped}
+					onClick={() => dispatch({ type: 'TOGGLE_FLIP' })}
+				>
+					<Front valid={state.isValid} brand={brand}>
+						<span data-testid="card-number" data-field="card-number">
+							{formatCardNumber(state.cardNumber)}
 						</span>
-						<span
-							data-testid="credit-card-user-name"
-							data-field="card-user-name"
-						>
-							{userName.toUpperCase()}
+
+						<span data-testid="card-user-name" data-field="card-user-name">
+							{state.cardHolder.toUpperCase()}
 						</span>
-						<span
-							data-testid="credit-card-expiration-date"
-							data-field="card-expiration-date"
-						>
-							{expirationDate}
+
+						<span data-testid="card-expiry-date" data-field="card-expiry-date">
+							{state.expiryDate}
 						</span>
 					</Front>
 
-					<Back valid={valid}>
-						<span data-testid="credit-card-cvv" data-field="card-cvv">
-							{cvv}
+					<Back valid={state.isValid}>
+						<span data-testid="card-cvc" data-field="card-cvc">
+							{state.cvc}
 						</span>
 					</Back>
 				</Flipper>
@@ -47,17 +61,11 @@ const CreditCard = ({ cardNumber, userName, expirationDate, cvv }) => {
 };
 
 CreditCard.propTypes = {
-	cardNumber: PropTypes.string,
-	userName: PropTypes.string,
-	expirationDate: PropTypes.string,
-	cvv: PropTypes.string,
+	className: PropTypes.string,
 };
 
 CreditCard.defaultProps = {
-	cardNumber: '**** **** **** ****',
-	userName: 'nome do titular',
-	expirationDate: '00/00',
-	cvv: '***',
+	className: undefined,
 };
 
 export default CreditCard;
