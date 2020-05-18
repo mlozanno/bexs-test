@@ -30,3 +30,4 @@ $ yarn start
 - [x] Make request to api /pagar
 - [ ] Abstract media queries function
 - [ ] Add font SF Pro Text
+- [ ] Refactory Form component
