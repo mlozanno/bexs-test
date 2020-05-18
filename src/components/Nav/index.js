@@ -10,22 +10,23 @@ const Nav = () => {
 	const ToggleMenu = !opened ? MdMenu : MdClose;
 
 	const items = [
-		{ to: '/', label: 'Home' },
-		{ to: '/checkout', label: 'Checkout' },
-		{ to: '/carteira', label: 'Carteira' },
+		{ to: `/`, label: `Home` },
+		{ to: `/checkout`, label: `Checkout` },
+		{ to: `/carteira`, label: `Carteira` },
 	];
 
 	return (
 		<>
 			<ToggleButton
+				data-testid="toggle-button"
 				type="button"
-				className={opened ? 'close' : ''}
+				className={opened ? `close` : ``}
 				onClick={() => setOpened(!opened)}
 			>
 				<ToggleMenu size={40} />
 			</ToggleButton>
 
-			<StyledNav className={opened ? 'opened' : ''}>
+			<StyledNav className={opened ? `opened` : ``}>
 				<MenuList data-testid="nav">
 					{items.map(item => (
 						<li key={item.label}>

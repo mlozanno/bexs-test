@@ -5,20 +5,32 @@ import '@testing-library/jest-dom';
 
 import Nav from '~/components/Nav';
 
-describe('<Nav />', () => {
-	it('should be a function', () => {
-		expect(typeof Nav).toBe('function');
+describe(`<Nav />`, () => {
+	it(`should be a function`, () => {
+		expect(typeof Nav).toBe(`function`);
 	});
 
-	it('should be render component', () => {
+	it(`should be render component`, () => {
 		const { getByTestId } = render(
 			<MemoryRouter>
 				<Nav />
 			</MemoryRouter>
 		);
 
-		const nav = getByTestId('nav');
+		const nav = getByTestId(`nav`);
 
 		expect(nav).toMatchSnapshot();
+	});
+
+	it(`should be an instance of <ul>`, () => {
+		const { getByTestId } = render(
+			<MemoryRouter>
+				<Nav />
+			</MemoryRouter>
+		);
+
+		const nav = getByTestId(`nav`);
+
+		expect(nav instanceof HTMLUListElement).toBeTruthy();
 	});
 });
