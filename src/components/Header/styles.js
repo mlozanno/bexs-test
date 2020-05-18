@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { spacing, colors } from '~/styles/theme';
+import { toRem, colors } from '~/styles/theme';
 
 export const StyledHeader = styled.header`
 	background-color: ${colors.light};
@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
 
 	img {
 		display: block;
-		max-height: 3rem;
+		max-height: ${toRem(3)};
 	}
 `;
 
@@ -16,7 +16,7 @@ export const Content = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	max-width: 1024px;
-	height: ${spacing(7)};
+	height: ${toRem(7)};
 	margin: 0 auto;
-	padding: ${spacing(0, 2)};
+	padding: ${toRem(0, 2)};
 `;
