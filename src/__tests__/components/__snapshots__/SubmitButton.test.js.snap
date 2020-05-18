@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SubmitButton /> should be render component 1`] = `
+<button
+  class="sc-AxjAm jVhaLu"
+  data-testid="submit-button"
+  type="submit"
+>
+  <span>
+    test label
+  </span>
+</button>
+`;
