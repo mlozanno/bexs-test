@@ -2,83 +2,66 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import CreditCard from '~/components/CreditCard';
 
-const cardData = {
-	cardNumber: '123123123',
-	userName: 'MARCUS LOZANO',
-	expirationDate: '10/23',
-	cvv: '123',
-};
+import { CardProvider } from '~/context/card';
 
-describe('<CreditCard />', () => {
-	it('should be a function', () => {
-		expect(typeof CreditCard).toBe('function');
+import { INITIAL_STATE } from '~/reducers/actions';
+
+import { formatCardNumber } from '~/utils';
+
+describe(`<CreditCard />`, () => {
+	it(`should be a function`, () => {
+		expect(typeof CreditCard).toBe(`function`);
 	});
 
-	describe('Real data', () => {
-		it('should be able to display cardNumber data', () => {
-			const { getByTestId } = render(<CreditCard {...cardData} />);
+	describe(`Real data`, () => {
+		it(`should be able to display cardNumber data`, () => {
+			const { getByTestId } = render(
+				<CardProvider>
+					<CreditCard />
+				</CardProvider>
+			);
 
-			const cardNumber = getByTestId('credit-card-number');
+			const cardNumber = getByTestId(`card-number`);
 
-			expect(cardNumber).toHaveTextContent(cardData.cardNumber);
+			expect(cardNumber).toHaveTextContent(
+				formatCardNumber(INITIAL_STATE.cardNumber)
+			);
 		});
 
-		it('should be able to display userName data', () => {
-			const { getByTestId } = render(<CreditCard {...cardData} />);
+		it(`should be able to display cardHolder data`, () => {
+			const { getByTestId } = render(
+				<CardProvider>
+					<CreditCard />
+				</CardProvider>
+			);
 
-			const userName = getByTestId('credit-card-user-name');
+			const cardHolder = getByTestId(`card-holder`);
 
-			expect(userName).toHaveTextContent(cardData.userName);
+			expect(cardHolder).toHaveTextContent(INITIAL_STATE.cardHolder);
 		});
 
-		it('should be able to display expirationDate data', () => {
-			const { getByTestId } = render(<CreditCard {...cardData} />);
+		it(`should be able to display expiryDate data`, () => {
+			const { getByTestId } = render(
+				<CardProvider>
+					<CreditCard />
+				</CardProvider>
+			);
 
-			const expirationDate = getByTestId('credit-card-expiration-date');
+			const expiryDate = getByTestId(`card-expiry-date`);
 
-			expect(expirationDate).toHaveTextContent(cardData.expirationDate);
+			expect(expiryDate).toHaveTextContent(INITIAL_STATE.expiryDate);
 		});
 
-		it('should be able to display cvv data', () => {
-			const { getByTestId } = render(<CreditCard {...cardData} />);
+		it(`should be able to display cvc data`, () => {
+			const { getByTestId } = render(
+				<CardProvider>
+					<CreditCard />
+				</CardProvider>
+			);
 
-			const cvv = getByTestId('credit-card-cvv');
+			const cvc = getByTestId(`card-cvc`);
 
-			expect(cvv).toHaveTextContent(cardData.cvv);
-		});
-	});
-
-	describe('Plaholder data', () => {
-		it('should be able to display "**** **** **** ****" if cardNumber is missing', () => {
-			const { getByTestId } = render(<CreditCard />);
-
-			const cardNumber = getByTestId('credit-card-number');
-
-			expect(cardNumber).toHaveTextContent('**** **** **** ****');
-		});
-
-		it('should be able to display "NOME DO TITULAR" if userName is missing', () => {
-			const { getByTestId } = render(<CreditCard />);
-
-			const userName = getByTestId('credit-card-user-name');
-
-			expect(userName).toHaveTextContent('NOME DO TITULAR');
-		});
-
-		it('should be able to display "00/00" if expirationDate is missing', () => {
-			const { getByTestId } = render(<CreditCard />);
-
-			const userName = getByTestId('credit-card-expiration-date');
-
-			expect(userName).toHaveTextContent('00/00');
-		});
-
-		it('should be able to display "***" if cvv is missing', () => {
-			const { getByTestId } = render(<CreditCard />);
-
-			const userName = getByTestId('credit-card-cvv');
-
-			expect(userName).toHaveTextContent('***');
+			expect(cvc).toHaveTextContent(INITIAL_STATE.cvc);
 		});
 	});
 });
