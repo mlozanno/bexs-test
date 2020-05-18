@@ -9,6 +9,7 @@
 			"plugin:prettier/recommended",
 			"plugin:jest/recommended"
 		],
+		"parser": "babel-eslint",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -42,7 +43,9 @@
 			"react/jsx-indent-props": [2, "tab"],
 			"react/jsx-props-no-spreading": "off",
 			"import/prefer-default-export": "off",
-			"no-plusplus": "off"
+			"no-plusplus": "off",
+			"no-param-reassign": "off",
+			"strict": 0
 		},
 		"settings": {
 			"import/resolver": {
