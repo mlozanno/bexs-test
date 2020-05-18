@@ -26,7 +26,7 @@ $ yarn start
 
 ### TODO
 
-- [ ] Refectory toRem function (get integer pixel)
+- [x] Refactory pxToRem function (get integer pixel)
 - [x] Make request to api /pagar
 - [ ] Abstract media queries function
 - [ ] Add font SF Pro Text

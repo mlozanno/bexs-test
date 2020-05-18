@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { toRem, fontSize, colors } from '~/styles/theme';
+import { pxToRem, fontSize, colors } from '~/styles/theme';
 
 import chevron from '~/assets/chevron.svg';
 import check from '~/assets/check.svg';
@@ -41,12 +41,12 @@ export const ExpandedStep = styled.li`
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-				width: ${toRem(2.2)};
-				height: ${toRem(2.2)};
-        margin-right: ${toRem(0.8)};
+				width: ${pxToRem(22)};
+				height: ${pxToRem(22)};
+        margin-right: ${pxToRem(8)};
         font-weight: bold;
-        font-size: ${toRem(1.1)};
-        border: 2px solid ${colors.primary};
+        font-size: ${pxToRem(11)};
+        border: ${pxToRem(2)} solid ${colors.primary};
         border-radius: 100%;
 				content: '${({ step, isDone }) => !isDone && step}';
         
@@ -61,10 +61,10 @@ export const ExpandedStep = styled.li`
       + li {
         &::after {
           position: absolute;
-          left: ${toRem(-2.5)};
+          left: ${pxToRem(-25)};
           display: block;
-          width: ${toRem(0.8)};
-          height: ${toRem(1.4)};
+          width: ${pxToRem(8)};
+          height: ${pxToRem(14)};
           background: url(${chevron}) no-repeat;
           background-size: contain;
           content: '';
@@ -72,7 +72,7 @@ export const ExpandedStep = styled.li`
 
         &:last-child {
           &::after {
-            left: ${toRem(-0.6)};
+            left: ${pxToRem(-6)};
           }
         }
       }

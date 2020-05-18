@@ -10,7 +10,7 @@ const Nav = () => {
 	const ToggleMenu = !opened ? MdMenu : MdClose;
 
 	const items = [
-		{ to: `/`, label: `Home` },
+		{ to: `/shop`, label: `Shop` },
 		{ to: `/checkout`, label: `Checkout` },
 		{ to: `/carteira`, label: `Carteira` },
 	];

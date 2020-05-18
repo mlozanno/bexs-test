@@ -1,12 +1,12 @@
 export const base = 10;
 
 export const colors = {
-	darkGrey: '#3C3C3C',
-	error: '#EB5757',
-	grey: '#c9c9c9',
-	light: '#fff',
-	lightGrey: '#F7F7F7',
-	primary: '#DE4B4B',
+	darkGrey: `#3C3C3C`,
+	error: `#EB5757`,
+	grey: `#c9c9c9`,
+	light: `#fff`,
+	lightGrey: `#F7F7F7`,
+	primary: `#DE4B4B`,
 };
 
 export const fontSize = {
@@ -21,7 +21,7 @@ export const zIndex = {
 	super: 100,
 };
 
-export const toRem = (...values) =>
-	values
-		.map(value => (Number(value) ? `${(value * base) / base}rem` : value))
-		.join(' ');
+export const pxToRem = (...valuesInPx) =>
+	valuesInPx
+		.map(value => (Number(value) ? `${value / base}rem` : value))
+		.join(` `);

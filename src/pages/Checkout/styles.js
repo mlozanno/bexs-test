@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { toRem, colors, fontSize } from '~/styles/theme';
+import { pxToRem, colors, fontSize } from '~/styles/theme';
 
 import CreditCard from '~/components/CreditCard';
 
@@ -19,25 +19,25 @@ export const CardContent = styled.aside`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: ${toRem(10)};
-	padding: ${toRem(4, 4, 11.4)};
+	margin-bottom: ${pxToRem(100)};
+	padding: ${pxToRem(40, 40, 114)};
 	color: ${colors.light};
 	font-size: ${fontSize.small};
 	background-color: ${colors.primary};
 
 	@media (min-width: 1024px) {
 		align-items: flex-start;
-		width: ${toRem(35)};
+		width: ${pxToRem(350)};
 		height: 100%;
 		margin-bottom: 0;
-		padding: ${toRem(5, 0, 0, 6.4)};
+		padding: ${pxToRem(50, 0, 0, 64)};
 	}
 `;
 
 export const BackLink = styled(Link)`
 	position: absolute;
-	top: ${toRem(3.5)};
-	left: ${toRem(0.5)};
+	top: ${pxToRem(35)};
+	left: ${pxToRem(5)};
 
 	> span {
 		display: none;
@@ -50,7 +50,7 @@ export const BackLink = styled(Link)`
 
 		> span {
 			display: inline-block;
-			margin-left: ${toRem(1.4)};
+			margin-left: ${pxToRem(14)};
 			color: ${colors.light};
 			font-size: ${fontSize.small};
 		}
@@ -59,22 +59,22 @@ export const BackLink = styled(Link)`
 
 export const NewCardTitle = styled.h2`
 	position: relative;
-	max-width: ${toRem(22)};
-	margin-top: ${toRem(3)};
-	padding-left: ${toRem(5.5)};
+	max-width: ${pxToRem(220)};
+	margin-top: ${pxToRem(30)};
+	padding-left: ${pxToRem(55)};
 	color: inherit;
-	font-size: ${toRem(1.6)};
+	font-size: ${pxToRem(16)};
 
 	@media (min-width: 1024px) {
-		margin: ${toRem(5, 0, 3)};
+		margin: ${pxToRem(50, 0, 30)};
 	}
 
 	&::before {
 		position: absolute;
-		top: calc(50% - ${toRem(2)});
+		top: calc(50% - ${pxToRem(20)});
 		left: 0;
-		width: ${toRem(4)};
-		height: ${toRem(4)};
+		width: ${pxToRem(40)};
+		height: ${pxToRem(40)};
 		background: url(${titleIcon}) no-repeat;
 		background-size: contain;
 		content: '';
@@ -83,7 +83,7 @@ export const NewCardTitle = styled.h2`
 
 export const StyledCreditCard = styled(CreditCard)`
 	position: absolute;
-	top: ${toRem(15)};
+	top: ${pxToRem(150)};
 
 	@media (min-width: 1024px) {
 		position: relative;
@@ -95,6 +95,6 @@ export const FormContent = styled.div`
 	background-color: ${colors.light};
 
 	@media (min-width: 1024px) {
-		padding: ${toRem(5.3, 6.4, 0, 16.8)};
+		padding: ${pxToRem(53, 64, 0, 168)};
 	}
 `;

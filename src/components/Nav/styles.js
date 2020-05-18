@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem, zIndex, colors } from '~/styles/theme';
+import { pxToRem, zIndex, colors } from '~/styles/theme';
 
 export const StyledNav = styled.nav`
 	@media (max-width: 767px) {
@@ -33,8 +33,8 @@ export const ToggleButton = styled.button`
 
 	&.close {
 		position: absolute;
-		top: ${toRem(2)};
-		right: ${toRem(2)};
+		top: ${pxToRem(20)};
+		right: ${pxToRem(20)};
 		z-index: ${zIndex.super};
 		color: ${colors.light};
 	}
@@ -49,7 +49,7 @@ export const MenuList = styled.ul`
 		text-align: center;
 
 		> li + li {
-			margin-top: ${toRem(2)};
+			margin-top: ${pxToRem(20)};
 		}
 	}
 
@@ -57,7 +57,7 @@ export const MenuList = styled.ul`
 		display: flex;
 
 		> li + li {
-			margin-left: ${toRem(2)};
+			margin-left: ${pxToRem(20)};
 		}
 	}
 `;

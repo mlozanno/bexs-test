@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
-import { toRem, colors } from '~/styles/theme';
+import { pxToRem, colors } from '~/styles/theme';
 
 import frontInvalid from '~/assets/front-invalid.svg';
 import backInvalid from '~/assets/back-invalid.svg';
@@ -21,41 +21,41 @@ const brandsDimensions = [
 
 export const StyledCreditCard = styled.div`
 	span {
-		font-size: ${toRem(1.2)};
+		font-size: ${pxToRem(12)};
 
 		@media (min-width: 768px) {
-			font-size: ${toRem(1.6)};
+			font-size: ${pxToRem(16)};
 		}
 	}
 
 	span[data-field='card-number'],
 	span[data-field='card-cvc'] {
-		font-size: ${toRem(1.9)};
+		font-size: ${pxToRem(19)};
 
 		@media (min-width: 768px) {
-			font-size: ${toRem(2.2)};
+			font-size: ${pxToRem(22)};
 		}
 	}
 
 	span[data-field='card-cvc'] {
 		position: absolute;
 		color: ${colors.darkGrey};
-		transform: translate(135px, 80px);
+		transform: translate(${pxToRem(135)}, ${pxToRem(80)});
 	}
 `;
 
 export const FliperContainer = styled.div`
 	position: relative;
-	width: ${toRem(28)};
-	height: ${toRem(17.2)};
-	perspective: ${toRem(100)};
+	width: ${pxToRem(280)};
+	height: ${pxToRem(172)};
+	perspective: ${pxToRem(1000)};
 
 	&::before {
 		position: absolute;
-		bottom: ${toRem(-0.5)};
+		bottom: ${pxToRem(-5)};
 		left: 50%;
 		width: 90%;
-		height: ${toRem(0.5)};
+		height: ${pxToRem(5)};
 		background-color: ${rgba(colors.darkGrey, 0.3)};
 		border-radius: 50%;
 		transform: translateX(-50%);
@@ -64,8 +64,8 @@ export const FliperContainer = styled.div`
 	}
 
 	@media (min-width: 768px) {
-		width: ${toRem(36.4)};
-		height: ${toRem(22.3)};
+		width: ${pxToRem(364)};
+		height: ${pxToRem(223)};
 	}
 `;
 
@@ -73,7 +73,7 @@ export const Flipper = styled.div`
 	position: relative;
 	width: 100%;
 	height: 100%;
-	border-radius: ${toRem(1)};
+	border-radius: ${pxToRem(10)};
 	transform-style: preserve-3d;
 	transition: transform 0.3s ease-in-out;
 
@@ -89,9 +89,9 @@ export const Front = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	padding: ${toRem(3, 2)};
+	padding: ${pxToRem(30, 20)};
 	color: ${colors.light};
-	text-shadow: 0px 1px 2px #000000b3;
+	text-shadow: ${pxToRem(0, 1, 2)} #000000b3;
 	background: url(${({ valid }) => (!valid ? frontInvalid : frontValid)});
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -101,11 +101,11 @@ export const Front = styled.div`
 
 	span[data-field='card-number'] {
 		grid-column: span 4;
-		letter-spacing: ${toRem(0.14)};
+		letter-spacing: ${pxToRem(1.4)};
 		white-space: nowrap;
 
 		@media (min-width: 768px) {
-			letter-spacing: ${toRem(0.4)};
+			letter-spacing: ${pxToRem(4)};
 		}
 	}
 
@@ -121,7 +121,7 @@ export const Front = styled.div`
 	&::before {
 		grid-column: span 4;
 		width: 0;
-		height: ${toRem(3)};
+		height: ${pxToRem(30)};
 		background: url(${brandsImg}) no-repeat;
 		content: '';
 
@@ -130,8 +130,8 @@ export const Front = styled.div`
 				const brandObj = brandsDimensions.find(item => item.type === brand);
 
 				return css`
-					width: ${toRem(!valid ? 0 : brandObj.width / 10)};
-					background-position-x: ${toRem(brandObj.x / 10)};
+					width: ${pxToRem(!valid ? 0 : brandObj.width)};
+					background-position-x: ${pxToRem(brandObj.x)};
 				`;
 			}
 
@@ -145,7 +145,7 @@ export const Back = styled.div`
 	width: 100%;
 	height: 100%;
 	color: ${colors.light};
-	text-shadow: 0px 1px 2px #000000b3;
+	text-shadow: ${pxToRem(0, 1, 2)} #000000b3;
 	background: url(${({ valid }) => (!valid ? backInvalid : backValid)});
 	background-repeat: no-repeat;
 	background-size: cover;

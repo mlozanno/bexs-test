@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-import { toRem, fontSize, colors } from '~/styles/theme';
+import { pxToRem, fontSize, colors } from '~/styles/theme';
 
 export const StyledButton = styled.button`
 	display: flex;
 	grid-column: span 2;
 	align-items: center;
 	justify-content: center;
-	height: ${toRem(5)};
+	height: ${pxToRem(50)};
 	color: ${colors.light};
 	font-weight: normal;
 	font-size: ${fontSize.regular};
@@ -16,7 +16,7 @@ export const StyledButton = styled.button`
 	text-transform: uppercase;
 	background-color: ${colors.primary};
 	border: none;
-	border-radius: ${toRem(1)};
+	border-radius: ${pxToRem(10)};
 	transition: background-color 0.2s;
 
 	> span {
@@ -25,8 +25,8 @@ export const StyledButton = styled.button`
 
 		svg {
 			position: absolute;
-			top: calc(50% - ${toRem(1)});
-			left: ${toRem(-3)};
+			top: calc(50% - ${pxToRem(10)});
+			left: ${pxToRem(-30)};
 		}
 
 		&::after {

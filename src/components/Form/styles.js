@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import { toRem, fontSize } from '~/styles/theme';
+import { pxToRem, fontSize } from '~/styles/theme';
 
 export const StyledForm = styled.form`
 	display: grid;
 	grid-auto-flow: dense;
-	grid-gap: ${toRem(1, 2)};
+	grid-gap: ${pxToRem(10, 20)};
 	grid-template-columns: 1fr 1fr;
 	justify-content: space-between;
-	max-width: ${toRem(44)};
+	max-width: ${pxToRem(440)};
 	margin: 0 auto;
-	padding: ${toRem(0, 4, 4)};
+	padding: ${pxToRem(0, 40, 40)};
 
 	@media (min-width: 1024px) {
-		grid-row-gap: ${toRem(4)};
+		grid-row-gap: ${pxToRem(40)};
 		max-width: 100%;
-		margin-top: ${toRem(5)};
+		margin-top: ${pxToRem(50)};
 		padding: 0;
 	}
 
@@ -45,6 +45,6 @@ export const StyledForm = styled.form`
 	}
 
 	.MuiFormHelperText-root {
-		font-size: ${toRem(1.1)};
+		font-size: ${pxToRem(11)};
 	}
 `;
