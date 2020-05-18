@@ -5,19 +5,19 @@ import '@testing-library/jest-dom';
 
 import Header from '~/components/Header';
 
-describe('<Header />', () => {
-	it('should be a function', () => {
-		expect(typeof Header).toBe('function');
+describe(`<Header />`, () => {
+	it(`should be a function`, () => {
+		expect(typeof Header).toBe(`function`);
 	});
 
-	it('should render component', () => {
+	it(`should render component`, () => {
 		const { getByTestId } = render(
 			<MemoryRouter>
 				<Header />
 			</MemoryRouter>
 		);
 
-		const header = getByTestId('header');
+		const header = getByTestId(`header`);
 
 		expect(header).toMatchSnapshot();
 	});

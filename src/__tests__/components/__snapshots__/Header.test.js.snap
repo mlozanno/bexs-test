@@ -2,7 +2,7 @@
 
 exports[`<Header /> should render component 1`] = `
 <header
-  class="sc-AxhCb dmMwtR"
+  class="sc-AxhCb iuxROu"
   data-testid="header"
 >
   <div
@@ -18,7 +18,8 @@ exports[`<Header /> should render component 1`] = `
       />
     </a>
     <button
-      class="sc-AxirZ hIhLpl"
+      class="sc-AxirZ xiPux"
+      data-testid="toggle-button"
       type="button"
     >
       <svg
@@ -37,7 +38,7 @@ exports[`<Header /> should render component 1`] = `
       </svg>
     </button>
     <nav
-      class="sc-AxjAm gTmMrC"
+      class="sc-AxjAm bDrSHG"
     >
       <ul
         class="sc-AxiKw kuWfqk"
