@@ -4,15 +4,15 @@ import '@testing-library/jest-dom';
 
 import Wallet from '~/pages/Wallet';
 
-describe('<Wallet /> page', () => {
-	it('should be a function', () => {
-		expect(typeof Wallet).toBe('function');
+describe(`<Wallet /> page`, () => {
+	it(`should be a function`, () => {
+		expect(typeof Wallet).toBe(`function`);
 	});
 
-	it('should be render component', () => {
+	it(`should be render component`, () => {
 		const { getByTestId } = render(<Wallet />);
 
-		const wallet = getByTestId('wallet-page');
+		const wallet = getByTestId(`wallet-page`);
 
 		expect(wallet).toMatchSnapshot();
 	});
