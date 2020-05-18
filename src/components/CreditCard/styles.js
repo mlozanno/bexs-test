@@ -10,13 +10,13 @@ import backValid from '~/assets/back-valid.svg';
 import brandsImg from '~/assets/card-brands/brands.png';
 
 const brandsDimensions = [
-	{ type: 'maestro', width: 50, x: -0 },
-	{ type: 'amex', width: 87, x: -64 },
-	{ type: 'visa', width: 99, x: -164 },
-	{ type: 'mastercard', width: 50, x: -277 },
-	{ type: 'dinersclub', width: 44, x: -341 },
-	{ type: 'jcb', width: 42, x: -398 },
-	{ type: 'discover', width: 42, x: -454 },
+	{ type: `maestro`, width: 50, x: -0 },
+	{ type: `amex`, width: 87, x: -64 },
+	{ type: `visa`, width: 99, x: -164 },
+	{ type: `mastercard`, width: 50, x: -277 },
+	{ type: `dinersclub`, width: 44, x: -341 },
+	{ type: `jcb`, width: 42, x: -398 },
+	{ type: `discover`, width: 42, x: -454 },
 ];
 
 export const StyledCreditCard = styled.div`
@@ -77,7 +77,7 @@ export const Flipper = styled.div`
 	transform-style: preserve-3d;
 	transition: transform 0.3s ease-in-out;
 
-	${({ flipped }) => flipped && 'transform: rotateY(180deg);'}
+	${({ flipped }) => flipped && `transform: rotateY(180deg);`}
 `;
 
 export const Front = styled.div`
@@ -109,7 +109,7 @@ export const Front = styled.div`
 		}
 	}
 
-	span[data-field='card-user-name'] {
+	span[data-field='card-holder'] {
 		grid-column: span 3;
 	}
 

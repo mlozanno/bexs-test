@@ -19,13 +19,13 @@ const CreditCard = ({ className }) => {
 
 	useEffect(() => {
 		if (state.cardType?.type) {
-			dispatch({ type: 'VALID_CARD' });
+			dispatch({ type: `VALID_CARD` });
 			setBrand(state.cardType.type);
 
 			return;
 		}
 
-		dispatch({ type: 'INVALID_CARD' });
+		dispatch({ type: `INVALID_CARD` });
 	}, [state.cardType, dispatch]);
 
 	return (
@@ -33,14 +33,14 @@ const CreditCard = ({ className }) => {
 			<FliperContainer>
 				<Flipper
 					flipped={state.flipped}
-					onClick={() => dispatch({ type: 'TOGGLE_FLIP' })}
+					onClick={() => dispatch({ type: `TOGGLE_FLIP` })}
 				>
 					<Front valid={state.isValid} brand={brand}>
 						<span data-testid="card-number" data-field="card-number">
 							{formatCardNumber(state.cardNumber)}
 						</span>
 
-						<span data-testid="card-user-name" data-field="card-user-name">
+						<span data-testid="card-holder" data-field="card-holder">
 							{state.cardHolder.toUpperCase()}
 						</span>
 
